@@ -9,10 +9,11 @@ export default function VideosContainer() {
   const { videos, isLoading, isError, error } = useSelector(
     (state) => state.videos
   );
+  const { selectedTags, searchText } = useSelector((state) => state.filter);
 
   useEffect(() => {
-    dispatch(loadVideos());
-  }, [dispatch]);
+    dispatch(loadVideos({ tags: selectedTags, searchText }));
+  }, [dispatch, selectedTags, searchText]);
 
   let content;
   if (isLoading) {
