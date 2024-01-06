@@ -13,7 +13,6 @@ export const getVideos = async ({ tags, searchText }) => {
       query += `?q=${searchText}`;
     }
   }
-  console.log(`/videos${query}`);
   const response = await AXIOS.get(`/videos${query}`);
   return response.data;
 };

@@ -3,15 +3,21 @@ import logo from "../assets/images/lws.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { searched } from "../features/filters/FilterSlice";
+import { useMatch, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const dispatch = useDispatch();
   const { searchText } = useSelector((state) => state.filter);
   const [inputText, setInputText] = useState(searchText);
+  const match = useMatch("/");
+  const navigate = useNavigate();
 
   const handleSearchText = (e) => {
     e.preventDefault();
     dispatch(searched(inputText));
+    if (!match) {
+      navigate("/");
+    }
   };
 
   return (
