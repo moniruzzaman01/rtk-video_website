@@ -1,11 +1,18 @@
-export default function VideoPlayer() {
+import PropTypes from "prop-types";
+
+export default function VideoPlayer({ link, title }) {
   return (
     <iframe
       width="100%"
       className="aspect-video"
-      src="https://www.youtube-nocookie.com/embed/6O4s7v28nlw"
-      title="Some video title"
+      src={link}
+      title={title}
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     ></iframe>
   );
 }
+
+VideoPlayer.propTypes = {
+  link: PropTypes.link,
+  title: PropTypes.string,
+};

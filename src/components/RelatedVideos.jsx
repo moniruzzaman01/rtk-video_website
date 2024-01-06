@@ -1,4 +1,6 @@
-export default function RelatedVideos() {
+import PropTypes from "prop-types";
+
+export default function RelatedVideos({ id, tags }) {
   return (
     <div className="col-span-full lg:col-auto max-h-[570px] overflow-y-auto">
       {/* <!-- single related video --> */}
@@ -34,3 +36,8 @@ export default function RelatedVideos() {
     </div>
   );
 }
+
+RelatedVideos.propTypes = {
+  id: PropTypes.number,
+  tags: PropTypes.array,
+};
