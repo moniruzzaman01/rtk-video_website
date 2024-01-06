@@ -1,6 +1,6 @@
 import Pagination from "./Pagination";
 
-export default function Videos() {
+export default function VideosContainer() {
   return (
     <section className="pt-12">
       <section className="pt-12">
@@ -52,7 +52,7 @@ export default function Videos() {
           </div>
 
           {/* <!-- error section--> */}
-          <div className="col-span-12">some error happened</div>
+          {/* <div className="col-span-12">some error happened</div> */}
         </div>
       </section>
       <Pagination />

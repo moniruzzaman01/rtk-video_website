@@ -1,14 +1,12 @@
-import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import Tags from "./components/Tags";
-import Videos from "./components/Videos";
+import Footer from "./components/Footer";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
     <div>
       <Navbar />
-      <Tags />
-      <Videos />
+      <Outlet />
       <Footer />
     </div>
   );
